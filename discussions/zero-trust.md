@@ -1,0 +1,13 @@
+# Module Eight Discussion: Zero Trust
+
+Zero trust changes the way I think about security because it takes away the idea that someone should automatically be trusted just because they already made it inside the system. To me, it means every user, device, and request should be checked before access is given. That makes sense because a password, account, or device can be compromised. Security cannot stop at the login screen. It has to continue while the system is being used.
+
+I can relate this to pest control because I do not walk into a house, treat one area, and assume the whole problem is solved. I still have to inspect, look for entry points, check where the activity is coming from, and sometimes return later to make sure the treatment worked. Zero trust feels similar. Just because something passed one security check does not mean we stop paying attention to it. The system should continue checking access and activity instead of assuming everything is fine.
+
+As a user, zero trust could make things a little less convenient. I may have to use multi-factor authentication, verify my identity more often, or have limits on what I can access. I am okay with that if it means better protection. At work, I may have access to a customer's property, but that does not mean I need access to everything they own. I only need access to what is required to do the job. The same idea applies to software. A user should only have the permissions needed to complete their task.
+
+If developers are against zero trust because they think it creates more work, I would explain that dealing with a security problem after the software is released can create a lot more work. Building security into the system from the beginning makes more sense than trying to repair everything after something goes wrong. Practices such as least privilege, input validation, authentication, authorization, encryption, logging, and automated testing can all support zero trust without forcing developers to manually check everything.
+
+The biggest thing I have learned from secure coding is that security works better when it is built into the entire process. Zero trust follows that same idea. Instead of trusting something once and forgetting about it, the system keeps checking and limiting access based on what is actually needed. That may take a little more effort up front, but I would rather prevent a problem than clean up the damage afterward.
+
+**Discussion question:** Do you think users would be more accepting of zero trust if companies explained why the extra security checks were necessary instead of just adding them without explanation?
