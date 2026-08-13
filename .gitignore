@@ -1,0 +1,44 @@
+# Visual Studio generated files
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+Debug/
+Release/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# C/C++ build artifacts
+*.obj
+*.o
+*.ilk
+*.idb
+*.pdb
+*.tlog
+*.lastbuildstate
+*.exe
+*.dll
+*.lib
+*.exp
+*.recipe
+*.ipch
+*.vsidx
+
+# Visual Studio databases and caches
+Browse.VC.db
+*.VC.db
+CodeChunks.db
+SemanticSymbols.db
+slnx.sqlite
+
+# Duplicate packaged project folders
+*.zip
+
+# OS clutter
+Thumbs.db
+.DS_Store
