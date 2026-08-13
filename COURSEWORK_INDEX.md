@@ -2,11 +2,43 @@
 
 This repository is intended to preserve **all distinct CS-405 Secure Coding work**, not only the artifacts required for the final portfolio.
 
+## Recovered Course Folder Archive
+
+I recovered and reviewed the original Week 1 through Week 3 course folders. Useful coursework has been preserved while Visual Studio caches, compiled binaries, debug output, duplicate ZIP files, and third-party library source were left out.
+
+### Week 1
+Location: `archive-by-week/Week_1/`
+
+- 1-3 Activity: Numeric Overflow Coding
+- Completed `NumericOverflow.cpp`
+- Overflow and underflow checks using `std::numeric_limits`
+- Testing across signed, unsigned, character, and floating-point types
+
+### Week 2
+Location: `archive-by-week/Week_2/`
+
+- 2-1 Journal: Defense in Depth
+- 2-2 Activity: SQL Injection Coding
+- 2-3 Activity: Buffer Overflow Coding
+- Completed SQL injection C++ source
+- Completed buffer overflow C++ source
+- Buffer-overflow exploit and normal-input Python helpers
+
+### Week 3
+Location: `archive-by-week/Week_3/`
+
+- Green Pace Security Policy milestone
+- Ten core security principles
+- Ten C/C++ coding standards
+- Compliant and noncompliant code examples
+- Foundation for the later Project One policy
+
 ## Secure Coding Activities
 
 ### Numeric Overflow
 Location: `activities/numeric-overflow/`
 
+- Actual completed `NumericOverflow.cpp` recovered from the course folder
 - Overflow and underflow detection using `std::numeric_limits`
 - Signed, unsigned, character, and floating-point testing
 - Numeric overflow activity summary
@@ -14,16 +46,19 @@ Location: `activities/numeric-overflow/`
 ### Buffer Overflow
 Location: `activities/buffer-overflow/`
 
-- Original vulnerable starter code
-- Secured version using bounded input
+- Original vulnerable starter example
+- Actual submitted `BufferOverflow.cpp`
+- Secured input using `std::cin.getline()`
 - Input-length validation and stream cleanup
+- Exploit-style and normal Python test-input helpers
 
 ### SQL Injection
 Location: `activities/sql-injection/`
 
-- SQL injection C++ activity source
-- Normal and exploit-style Python input generators
-- Prepared-statement security connection
+- Actual completed `SQLInjection.cpp` recovered from the course folder
+- Detection of the simulated always-true `OR` conditions required by the activity
+- Normal-query verification and attack blocking
+- Prepared-statement security connection used later in Project One
 
 ### Exception Handling
 Location: `activities/exceptions/`
@@ -115,27 +150,34 @@ Location: `discussions/`
 
 ## Reflections and Journals
 
-Location: `reflections/`
-
+- Week 2 Defense in Depth journal is preserved under `archive-by-week/Week_2/`.
 - Module Six: Don't Leave Security to the End
 - Module Seven: Consider the Motive for the Attack
 - Module Eight: Portfolio Reflection
 
-## Original Course Files Still to Archive
+## Files Still Worth Recovering From Later Weeks
 
-Some original files exist outside the text-based GitHub content already reconstructed here. These should also be stored in the repository so the archive contains both the readable portfolio version and the original submission evidence:
+The Week 1-3 ZIP did not contain all later-course source files. As later folders become available, the archive can still add:
 
-- `CS405_Module_One_Numeric_Overflow_Summary.docx`
-- `CS 405 Security Policy(7).docx`
-- `CS 405 Project Two Presentation(2).pptx`
-- `CS 405 Project Two Script(1).docx`
-- `Cppcheck Static Analysis Results.xml`
-- Unit-testing result screenshot
-- Visual Studio static-analysis screenshot
-- Any original `QuestionableCode.cpp`, `exceptions.cpp`, and encryption project source files still available locally
+- Original `QuestionableCode.cpp`
+- Original `exceptions.cpp` unit-test project
+- Module Five encryption source project
+- Static-analysis screenshots
+- Unit-testing screenshots
+- Any additional Week 4-8 journals, discussions, and source projects not already reconstructed here
 
-The narrated MP4 is over GitHub's normal single-file size limit, so the YouTube version is used as the portfolio copy instead of duplicating the large video file in the repository.
+## Deliberately Excluded Build Junk
+
+The uploaded course folder contained large amounts of Visual Studio-generated data that do not represent coursework and should not live in a portfolio repository. I excluded:
+
+- `.vs/` caches and Copilot indexes
+- `x64/Debug/` build output
+- `.obj`, `.pdb`, `.ilk`, `.idb`, `.tlog`, and executable files
+- Duplicate ZIP archives of folders already present
+- Machine-specific `.vcxproj.user` files
 
 ## Third-Party Dependencies
 
-SQLite source files used to build course examples are dependencies and are not presented as my own work. The repository focuses on the code I worked with, the security changes, testing evidence, and my analysis.
+The SQL injection activity included SQLite's `sqlite3.c` and `sqlite3.h`. Those are third-party dependency files and are not presented as my own source code. The repository focuses on the code I worked with, the security changes, testing evidence, and my analysis.
+
+The narrated Project Two MP4 is over GitHub's normal single-file size limit, so the YouTube version is used as the portfolio copy instead of duplicating the large video file in the repository.
