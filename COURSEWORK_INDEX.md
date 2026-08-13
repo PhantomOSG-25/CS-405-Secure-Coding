@@ -1,10 +1,8 @@
 # CS-405 Complete Coursework Index
 
-This repository is intended to preserve **all distinct CS-405 Secure Coding work**, not only the artifacts required for the final portfolio.
+This repository preserves the useful, distinct work from **CS-405 Secure Coding**, not only the two final portfolio projects. I reviewed the course ZIP folders and kept source code, assignment write-ups, testing work, security analysis, milestones, reflections, and project material while leaving out generated build debris and third-party libraries.
 
 ## Recovered Course Folder Archive
-
-I recovered and reviewed the original Week 1 through Week 3 course folders. Useful coursework has been preserved while Visual Studio caches, compiled binaries, debug output, duplicate ZIP files, and third-party library source were left out.
 
 ### Week 1
 Location: `archive-by-week/Week_1/`
@@ -20,8 +18,7 @@ Location: `archive-by-week/Week_2/`
 - 2-1 Journal: Defense in Depth
 - 2-2 Activity: SQL Injection Coding
 - 2-3 Activity: Buffer Overflow Coding
-- Completed SQL injection C++ source
-- Completed buffer overflow C++ source
+- Completed SQL injection and buffer-overflow source
 - Buffer-overflow exploit and normal-input Python helpers
 
 ### Week 3
@@ -30,67 +27,113 @@ Location: `archive-by-week/Week_3/`
 - Green Pace Security Policy milestone
 - Ten core security principles
 - Ten C/C++ coding standards
-- Compliant and noncompliant code examples
-- Foundation for the later Project One policy
+- Compliant and noncompliant examples
+- Foundation for Project One
+
+### Week 4
+Location: `archive-by-week/Week_4/`
+
+- 4-1 Activity: Exceptions
+- 4-2 Milestone: Unit Testing
+- Completed exception-handling source
+- Google Test vector tests
+- Positive and negative custom tests
+- Original milestone result: 15 passed, 0 failed
+
+### Week 5
+Location: `archive-by-week/Week_5/`
+
+- 5-1 Case Study: Triple A and Defense in Depth
+- 5-2 Activity: Encryption Coding
+- 5-3 Activity: Static Code Analysis
+- Completed XOR encryption/decryption source
+- Visual Studio and Cppcheck comparison
+- Original `QuestionableCode.cpp`
+- Full Cppcheck findings summary from the saved 2.21.0 XML results
+
+### Week 6
+Location: `archive-by-week/Week_6/`
+
+- 6-1 Journal: Don’t Leave Security to the End
+- Project One: Green Pace Secure Development Policy
+- Security built into the development process
+- Risk assessment, encryption, Triple-A, automation, auditing, and policy controls
+
+### Week 7
+Location: `archive-by-week/Week_7/`
+
+- 7-1 Journal: Consider the Motive for the Attack
+- Project Two narration and presentation work
+- Final unit-testing demonstration
+- Project Two narrated video linked through YouTube
+
+### Week 8
+Location: `archive-by-week/Week_8/`
+
+- 8-2 Journal: Portfolio Reflection
+- Zero Trust discussion is preserved under `discussions/`
+- Final reflection connects secure development concepts to practical troubleshooting and field experience
 
 ## Secure Coding Activities
 
 ### Numeric Overflow
 Location: `activities/numeric-overflow/`
 
-- Actual completed `NumericOverflow.cpp` recovered from the course folder
-- Overflow and underflow detection using `std::numeric_limits`
+- Completed `NumericOverflow.cpp`
+- Visual Studio project files
+- Overflow and underflow detection
 - Signed, unsigned, character, and floating-point testing
-- Numeric overflow activity summary
 
 ### Buffer Overflow
 Location: `activities/buffer-overflow/`
 
-- Original vulnerable starter example
-- Actual submitted `BufferOverflow.cpp`
-- Secured input using `std::cin.getline()`
-- Input-length validation and stream cleanup
-- Exploit-style and normal Python test-input helpers
+- Vulnerable starter example
+- Completed `BufferOverflow.cpp`
+- Secured bounded input
+- Exploit-style and normal Python test helpers
 
 ### SQL Injection
 Location: `activities/sql-injection/`
 
-- Actual completed `SQLInjection.cpp` recovered from the course folder
-- Detection of the simulated always-true `OR` conditions required by the activity
-- Normal-query verification and attack blocking
+- Completed `SQLInjection.cpp`
+- Simulated injection detection required by the activity
 - Prepared-statement security connection used later in Project One
 
 ### Exception Handling
 Location: `activities/exceptions/`
 
-- Specific exception handling
-- Negative exception testing
-- `std::length_error` test behavior
-
-### Encryption
-Location: `activities/encryption/`
-
-- Module Five encryption activity summary
-- Encryption at rest
-- Encryption in flight
-- Encryption in use
-
-### Static Code Analysis
-Location: `activities/static-analysis/`
-
-- Visual Studio C++ Code Analysis comparison
-- Cppcheck 2.21.0 analysis
-- Cppcheck project configuration
-- QuestionableCode findings
-- Original XML analysis report retained in the course archive
+- Completed `Exceptions.cpp`
+- Standard and custom exceptions
+- Specific handlers plus final catch-all protection
+- Division-by-zero handling
 
 ### Unit Testing
 Location: `activities/unit-testing/`
 
-- Module Four unit-testing milestone
-- Original 15-test suite result
-- Six additional tank-level validation tests
-- Final result: 21 passed, 0 failed
+- Full recovered `test.cpp`
+- Original Google Test collection suite
+- Positive `insert()` test
+- Negative `length_error` test
+- Six Project Two tank-level validation tests
+- Final result: **21 passed, 0 failed**
+
+### Encryption
+Location: `activities/encryption/`
+
+- Completed `Encryption.cpp`
+- Input data
+- Decrypted output
+- Exact encrypted output preserved in Base64-safe form
+- XOR encrypt/decrypt activity
+
+### Static Code Analysis
+Location: `activities/static-analysis/`
+
+- Original `QuestionableCode.cpp`
+- Visual Studio analysis comparison
+- Cppcheck 2.21.0 analysis
+- Saved Cppcheck project configuration
+- Full 32-message Cppcheck findings summary
 
 ## Milestones
 
@@ -107,20 +150,7 @@ Location: `projects/project-one/`
 
 **Green Pace Secure Development Policy**
 
-The final policy includes:
-
-- Ten security principles
-- Ten C/C++ coding standards
-- Noncompliant and compliant examples
-- Threat assessments
-- Automated detection tools
-- Encryption policies
-- Triple-A framework
-- DevSecOps automation
-- Audit controls
-- Enforcement and change control
-
-Original final document: `CS 405 Security Policy(7).docx`
+The completed policy covers secure coding standards, risk assessment, automated detection, encryption, Triple-A, DevSecOps, auditing, enforcement, and policy maintenance.
 
 ## Project Two
 
@@ -128,56 +158,35 @@ Location: `projects/project-two/`
 
 **Security Policy Presentation**
 
-- 19-slide PowerPoint presentation
+- 19-slide presentation
 - Full narration transcript
 - Unit-testing demonstration
 - DevSecOps automation summary
 - Risks, recommendations, and conclusion
-- Narrated YouTube presentation
 
 Narrated presentation: https://youtu.be/qfz68uJm49I
 
-Original final files:
+## Discussions and Reflections
 
-- `CS 405 Project Two Presentation(2).pptx`
-- `CS 405 Project Two Script(1).docx`
-
-## Discussions
-
-Location: `discussions/`
-
-- Module Eight: Zero Trust
-
-## Reflections and Journals
-
-- Week 2 Defense in Depth journal is preserved under `archive-by-week/Week_2/`.
-- Module Six: Don't Leave Security to the End
-- Module Seven: Consider the Motive for the Attack
-- Module Eight: Portfolio Reflection
-
-## Files Still Worth Recovering From Later Weeks
-
-The Week 1-3 ZIP did not contain all later-course source files. As later folders become available, the archive can still add:
-
-- Original `QuestionableCode.cpp`
-- Original `exceptions.cpp` unit-test project
-- Module Five encryption source project
-- Static-analysis screenshots
-- Unit-testing screenshots
-- Any additional Week 4-8 journals, discussions, and source projects not already reconstructed here
+- Defense in Depth
+- Don’t Leave Security to the End
+- Consider the Motive for the Attack
+- Zero Trust
+- Portfolio Reflection
 
 ## Deliberately Excluded Build Junk
 
-The uploaded course folder contained large amounts of Visual Studio-generated data that do not represent coursework and should not live in a portfolio repository. I excluded:
+The course folders contain large amounts of Visual Studio-generated material that do not represent portfolio work. I excluded:
 
 - `.vs/` caches and Copilot indexes
-- `x64/Debug/` build output
+- `x64/Debug/` compiled output
 - `.obj`, `.pdb`, `.ilk`, `.idb`, `.tlog`, and executable files
-- Duplicate ZIP archives of folders already present
+- Duplicate ZIP archives of folders already represented in the repository
 - Machine-specific `.vcxproj.user` files
+- Downloaded Google Test package binaries and headers that can be restored through package management
 
 ## Third-Party Dependencies
 
-The SQL injection activity included SQLite's `sqlite3.c` and `sqlite3.h`. Those are third-party dependency files and are not presented as my own source code. The repository focuses on the code I worked with, the security changes, testing evidence, and my analysis.
+SQLite's `sqlite3.c` and `sqlite3.h` were used as dependencies for the SQL injection activity. They are third-party source and are not presented as my work.
 
-The narrated Project Two MP4 is over GitHub's normal single-file size limit, so the YouTube version is used as the portfolio copy instead of duplicating the large video file in the repository.
+The narrated Project Two MP4 is larger than GitHub's normal single-file limit, so the YouTube copy is used instead of duplicating the video in the repository.
