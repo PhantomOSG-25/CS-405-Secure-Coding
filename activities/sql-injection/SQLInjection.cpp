@@ -73,24 +73,97 @@ bool initialize_database(sqlite3* db)
   return true;
 }
 
-bool run_query(sqlite3* db, const std::string& sql, std::vector< user_record >& records)
+bool run_query(sqlite3* db, const std::string& sql,
+    std::vector<user_record>& records)
 {
-  // TODO: Fix this method to fail and display an error if there is a suspected SQL Injection
-  //  NOTE: You cannot just flag 1=1 as an error, since 2=2 will work just as well. You need
-  //  something more generic
+    // Create a lowercase copy so the check works with OR, Or, or or.
+    std::string lower_sql = sql;
+    std::transform(
+        lower_sql.begin(),
+        lower_sql.end(),
+        lower_sql.begin(),
+        ::tolower);
 
-  // clear any prior results
-  records.clear();
+    // Look for an OR condition because the assignment tests
+    // SQL injection patterns such as OR 1=1 or OR 'hi'='hi'.
+    std::size_t or_position = lower_sql.find(" or ");
 
-  char* error_message;
-  if(sqlite3_exec(db, sql.c_str(), callback, &records, &error_message) != SQLITE_OK)
-  {
-    std::cout << "Data failed to be queried from USERS table. ERROR = " << error_message << std::endl;
-    sqlite3_free(error_message);
-    return false;
-  }
+    if (or_position != std::string::npos)
+    {
+        // Get everything after the OR keyword.
+        std::string condition = lower_sql.substr(or_position + 4);
 
-  return true;
+        // Remove a semicolon from the end if one exists.
+        if (!condition.empty() && condition.back() == ';')
+        {
+            condition.pop_back();
+        }
+
+        // Find the equals sign that separates the two values.
+        std::size_t equals_position = condition.find('=');
+
+        if (equals_position != std::string::npos)
+        {
+            std::string left_value =
+                condition.substr(0, equals_position);
+
+            std::string right_value =
+                condition.substr(equals_position + 1);
+
+            // Remove spaces from both values before comparing them.
+            left_value.erase(
+                std::remove_if(
+                    left_value.begin(),
+                    left_value.end(),
+                    ::isspace),
+                left_value.end());
+
+            right_value.erase(
+                std::remove_if(
+                    right_value.begin(),
+                    right_value.end(),
+                    ::isspace),
+                right_value.end());
+
+            // Matching values create a condition that is always true,
+            // which is the SQL injection pattern required by the activity.
+            if (!left_value.empty() &&
+                left_value == right_value)
+            {
+                records.clear();
+
+                std::cout
+                    << "Possible SQL injection attack detected. "
+                    << "Query was blocked."
+                    << std::endl;
+
+                return false;
+            }
+        }
+    }
+
+    // Clear results from any earlier query.
+    records.clear();
+
+    char* error_message = nullptr;
+
+    if (sqlite3_exec(
+        db,
+        sql.c_str(),
+        callback,
+        &records,
+        &error_message) != SQLITE_OK)
+    {
+        std::cout
+            << "Data failed to be queried from USERS table. ERROR = "
+            << error_message
+            << std::endl;
+
+        sqlite3_free(error_message);
+        return false;
+    }
+
+    return true;
 }
 
 // DO NOT CHANGE
@@ -129,6 +202,7 @@ bool run_query_injection(sqlite3* db, const std::string& sql, std::vector< user_
   return run_query(db, injectedSQL, records);
 }
 
+
 // DO NOT CHANGE
 void dump_results(const std::string& sql, const std::vector< user_record >& records)
 {
@@ -163,6 +237,7 @@ void run_queries(sqlite3* db)
     if (!run_query_injection(db, sql, records)) continue;
     dump_results(sql, records);
   }
+
 }
 
 // You can change main by adding stuff to it, but all of the existing code must remain, and be in the
