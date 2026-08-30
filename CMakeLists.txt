@@ -7,15 +7,17 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_library(security_lab src/security_lab.cpp)
 target_include_directories(security_lab PUBLIC include)
-target_compile_options(security_lab PRIVATE
-    $<$<CXX_COMPILER_ID:MSVC>:/W4>
-    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall;-Wextra;-Wpedantic>)
 
 add_executable(security_lab_tests tests/security_lab_tests.cpp)
 target_link_libraries(security_lab_tests PRIVATE security_lab)
-target_compile_options(security_lab_tests PRIVATE
-    $<$<CXX_COMPILER_ID:MSVC>:/W4>
-    $<$<NOT:$<CXX_COMPILER_ID:MSVC>>:-Wall;-Wextra;-Wpedantic>)
+
+if(MSVC)
+    target_compile_options(security_lab PRIVATE /W4)
+    target_compile_options(security_lab_tests PRIVATE /W4)
+else()
+    target_compile_options(security_lab PRIVATE -Wall -Wextra -Wpedantic)
+    target_compile_options(security_lab_tests PRIVATE -Wall -Wextra -Wpedantic)
+endif()
 
 enable_testing()
 add_test(NAME security_lab_tests COMMAND security_lab_tests)
