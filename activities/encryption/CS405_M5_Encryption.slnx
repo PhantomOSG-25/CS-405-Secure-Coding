@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="CS405_M5_Encryption.vcxproj" Id="06057a03-34d6-4cc9-9de6-5761004b8465" />
+</Solution>

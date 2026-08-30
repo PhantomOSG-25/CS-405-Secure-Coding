@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="NumericOverflow.vcxproj" Id="fcb72ab2-2fe6-43e2-bc22-e6394aacf98e" />
+</Solution>

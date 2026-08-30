@@ -1,0 +1,13 @@
+# 7-1 Journal: Consider the Motive for the Attack
+
+Michael Wood  
+SNHU  
+CS-405 Secure Coding  
+Instructor: Aaron Demory  
+Date Due: 08/16/2026
+
+When I think about the motive behind a cyberattack, I think it is important to look at what an attacker might gain instead of only looking at how they might get into the system. An attacker could be looking for money, customer information, passwords, company data, or simply trying to interrupt normal business operations. I can relate this to pest control because I usually need to understand why a pest is there before I can properly solve the problem. Finding ants inside a building is only part of the problem because I also need to look for food, moisture, entry points, or other conditions that are attracting them. I can apply the same thinking to secure coding by considering what information or parts of a program would be valuable to an attacker and then adding protection around those areas before a problem occurs.
+
+If I were explaining this to a new developer, I would tell them not to only ask, “How could someone attack this program?” but also ask, “Why would someone want to attack it?” Understanding the motive can help determine what parts of the software need the most protection. For example, a customer service system may contain names, addresses, payment information, service records, and employee login information, which could make it valuable to someone trying to steal information or gain access to other systems. Developers can then use controls such as encryption, input validation, prepared SQL statements, strong authentication, limited user permissions, and logging to make those targets harder to reach. Looking at both the possible attack and the reason behind it gives the developer a better picture of the actual risk.
+
+One example I can use in my Module Eight final reflection is a pest control company application used by technicians in the field. A technician may use a phone or tablet to access customer addresses, service histories, treatment information, and company systems. An attacker may target that application to steal customer information, obtain employee credentials, or interfere with company operations. Thinking about those motives early would help me design the software so technicians only have access to the information they need, sensitive information is encrypted, suspicious activity is logged, and user input is checked before it reaches the rest of the system. This shows me that secure coding is not only about fixing coding mistakes but also about understanding what someone may want from the system and protecting it before they have the opportunity to take advantage of it.
