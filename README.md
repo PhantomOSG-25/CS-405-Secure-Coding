@@ -161,6 +161,6 @@ CS-405 strengthened my understanding of how secure coding standards, automated t
 
 ---
 
-**Michael Wood**  
-Bachelor of Science in Computer Science  
-Southern New Hampshire University
+**Michael B. Wood**  
+B.S. Computer Science, Software Engineering concentration — conferred September 1, 2026  
+M.S. Artificial Intelligence — in progress at Southern New Hampshire University
